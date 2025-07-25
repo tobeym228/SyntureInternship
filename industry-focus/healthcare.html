@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Healthcare Recruitment Solutions</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --navy-blue: #001f3f;
+            --gold: #D4AF37;
+            --black: #222222;
+            --white: #ffffff;
+            --light-gray: #f5f5f5;
+            --dark-gold: #b38f00;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--light-gray);
+            color: var(--black);
+            line-height: 1.6;
+        }
+
+        .header {
+            background: linear-gradient(rgba(0,31,63,0.85), rgba(0,31,63,0.85)), url('https://images.unsplash.com/photo-1505751172876-fa1923c5c528?ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80');
+            background-size: cover;
+            background-position: center;
+            color: var(--white);
+            padding: 2.5rem 0 2rem;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--gold);
+            margin-bottom: 0.5rem;
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            color: var(--white);
+            margin-bottom: 1rem;
+        }
+
+        .tagline {
+            background: var(--gold);
+            color: var(--navy-blue);
+            padding: 10px 28px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-radius: 30px;
+            display: inline-block;
+            margin-top: 0.5rem;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 2.5rem auto;
+            padding: 0 2rem;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 2.5rem;
+            position: relative;
+        }
+
+        .section-title h2 {
+            font-size: 2rem;
+            color: var(--navy-blue);
+            display: inline-block;
+            padding-bottom: 10px;
+        }
+
+        .section-title h2::after {
+            display: none !important;
+        }
+
+        .services {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .service-card {
+            background: var(--white);
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            border: none;
+            text-align: center;
+            padding: 2.5rem 1.5rem 2rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.13);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            color: var(--gold);
+            margin-bottom: 1.2rem;
+        }
+
+        .service-content h3 {
+            color: var(--navy-blue);
+            font-size: 1.3rem;
+            margin-bottom: 0.7rem;
+        }
+
+        .service-content p {
+            color: var(--black);
+            margin-bottom: 1.2rem;
+            font-size: 1rem;
+        }
+
+        .stats {
+            background: var(--navy-blue);
+            color: var(--white);
+            padding: 2.5rem 0;
+            text-align: center;
+            border-radius: 10px;
+            margin-bottom: 2.5rem;
+        }
+
+        .stats-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .stat-item {
+            padding: 1.2rem 0;
+        }
+
+        .stat-number {
+            font-size: 2.2rem;
+            font-weight: bold;
+            color: var(--gold);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .process {
+            background: var(--white);
+            border-radius: 10px;
+            padding: 2.5rem 0;
+            margin-bottom: 2.5rem;
+        }
+
+        .process-steps {
+            display: flex;
+            flex-wrap: nowrap;
+            justify-content: flex-start;
+            gap: 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+            position: relative;
+            overflow-x: auto;
+            scrollbar-width: thin;
+            scrollbar-color: var(--gold) var(--light-gray);
+        }
+
+        .step {
+            min-width: 180px;
+            max-width: 220px;
+            flex: 1 1 180px;
+            background: var(--light-gray);
+            border-radius: 8px;
+            padding: 1.5rem 1rem;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            margin: 0 0.5rem;
+        }
+
+        .step-number {
+            width: 48px;
+            height: 48px;
+            background: var(--gold);
+            color: var(--navy-blue);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            font-weight: bold;
+            margin: 0 auto 1rem;
+        }
+
+        .step h4 {
+            color: var(--navy-blue);
+            margin-bottom: 0.7rem;
+            font-size: 1.1rem;
+        }
+
+        .resume-section {
+            background: var(--white);
+            border-radius: 10px;
+            padding: 2.5rem 0;
+            margin-bottom: 2.5rem;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.07);
+        }
+
+        .upload-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: var(--light-gray);
+            padding: 2rem 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .upload-box {
+            border: 2px dashed var(--gold);
+            border-radius: 8px;
+            padding: 2rem 1rem;
+            margin: 1.5rem 0;
+            background: var(--white);
+            transition: border-color 0.3s;
+        }
+
+        .upload-box:hover {
+            border-color: var(--dark-gold);
+        }
+
+        .upload-icon {
+            font-size: 2.5rem;
+            color: var(--gold);
+            margin-bottom: 1rem;
+        }
+
+        .upload-box h3 {
+            color: var(--navy-blue);
+            margin-bottom: 0.7rem;
+        }
+
+        .file-input {
+            display: none;
+        }
+
+        .file-label {
+            display: inline-block;
+            background: var(--gold);
+            color: var(--navy-blue);
+            font-weight: bold;
+            padding: 10px 28px;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: background 0.3s;
+            margin-top: 1rem;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+        }
+
+        .file-label:hover {
+            background: var(--dark-gold);
+            color: var(--white);
+        }
+
+        .form-group {
+            margin: 25px 0;
+            text-align: left;
+        }
+
+        .form-group label {
+            color: var(--navy-blue);
+            font-weight: 600;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1.5px solid #ddd;
+            border-radius: 6px;
+            font-size: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: var(--gold);
+            outline: none;
+            box-shadow: 0 0 0 2px rgba(212, 175, 55, 0.13);
+        }
+
+        .submit-btn {
+            background: var(--gold);
+            color: var(--navy-blue);
+            font-size: 1.05rem;
+            font-weight: bold;
+            padding: 12px 36px;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: background 0.3s, color 0.3s;
+            margin-top: 1rem;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+        }
+
+        .submit-btn:hover {
+            background: var(--dark-gold);
+            color: var(--white);
+        }
+
+        /* Navigation Buttons */
+        .nav-buttons {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            max-width: 1200px;
+            margin: 3rem auto 2rem auto;
+            padding: 0 2rem;
+        }
+
+        .nav-button {
+            background: var(--gold);
+            color: var(--navy-blue);
+            font-weight: bold;
+            padding: 14px 38px;
+            border-radius: 30px;
+            font-size: 1.08rem;
+            box-shadow: 0 4px 8px rgba(212,175,55,0.13);
+            text-decoration: none;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        .nav-button:hover {
+            background: var(--dark-gold);
+            color: var(--white);
+        }
+
+        /* Footer Contact Styles */
+        .footer-contact {
+          background: #0a0f3c;
+          color: rgb(244, 239, 239);
+          padding: 3rem 1rem;
+          font-family: 'Segoe UI', sans-serif;
+        }
+
+        .footer-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+          gap: 2rem;
+          max-width: 1200px;
+          margin: 0 auto;
+        }
+
+        .footer-logo {
+          width: 100px;
+          margin-bottom: 1rem;
+        }
+
+        .footer-box h3 {
+          color: #f1c40f;
+          margin-bottom: 0.5rem;
+        }
+
+        .footer-box ul {
+          list-style: none;
+          padding: 0;
+        }
+
+        .footer-box ul li {
+          margin-bottom: 0.4rem;
+        }
+
+        .footer-box ul li a {
+          color: #ddd;
+          text-decoration: none;
+          transition: color 0.3s ease;
+        }
+
+        .footer-box ul li a:hover {
+          color: #f1c40f;
+        }
+
+        .social-icons img {
+          width: 24px;
+          margin-right: 8px;
+          opacity: 0.8;
+          transition: opacity 0.3s ease;
+        }
+
+        .social-icons img:hover {
+          opacity: 1;
+        }
+
+        .nav-links {
+          list-style: none;
+          display: flex;
+          gap: 3rem;
+          padding-right: 160px;
+        }
+
+        .nav-links li {
+          position: relative;
+          align-items: center;
+        }
+
+        .dropdown-content,
+        .submenu-content {
+          position: absolute;
+          background: white;
+          min-width: 220px;
+          box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+          display: none;
+          list-style: none;
+          top: 100%;
+          left: 0;
+          border-radius: 4px;
+          padding: 5px 0;
+          z-index: 200;
+        }
+        .dropdown-content li,
+        .submenu-content li {
+          padding: 0;
+        }
+        .dropdown-content li a,
+        .submenu-content li a {
+          display: block;
+          padding: 10px 20px;
+          color: #333;
+          font-weight: 500;
+          white-space: nowrap;
+        }
+        .dropdown-content li a:hover,
+        .submenu-content li a:hover {
+          background: #0073e6;
+          color: white;
+        }
+
+        /* Show dropdown on hover */
+        .dropdown:hover > .dropdown-content,
+        .dropdown-submenu:hover > .submenu-content {
+          display: block;
+        }
+
+        /* Submenu */
+        .dropdown-submenu {
+          position: relative;
+        }
+
+        .submenu-content {
+          top: 0;
+          left: 100%;
+          border-radius: 4px;
+          transform: translateX(0);
+        }
+
+        .submenu-content {
+          left: auto;
+          left: 100%;
+          transform: translateX(0);
+        }
+
+        @media (max-width: 900px) {
+            .services, .stats-container, .process-steps {
+                grid-template-columns: 1fr !important;
+                flex-direction: column !important;
+                gap: 1.2rem !important;
+            }
+        }
+        @media (max-width: 600px) {
+            .container, .resume-section, .process, .stats {
+                padding: 1rem !important;
+            }
+            .header h1 {
+                font-size: 1.5rem;
+            }
+            .section-title h2 {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1>Healthcare Recruitment Solutions</h1>
+        <p>Connecting medical professionals with healthcare institutions worldwide</p>
+        <div class="tagline">Specialized Recruitment for Healthcare Professionals</div>
+    </header>
+
+    <section class="container">
+        <div class="section-title">
+            <h2>Our Services</h2>
+        </div>
+        <div class="services">
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-user-md"></i>
+                </div>
+                <div class="service-content">
+                    <h3>Clinical Staffing</h3>
+                    <p>Recruitment of physicians, nurses, and allied health professionals.</p>
+                </div>
+            </div>
+            
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-heartbeat"></i>
+                </div>
+                <div class="service-content">
+                    <h3>Medical Specialists</h3>
+                    <p>Specialized hiring for surgeons, radiologists, and other specialists.</p>
+                </div>
+            </div>
+            
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-clipboard-list"></i>
+                </div>
+                <div class="service-content">
+                    <h3>Healthcare Administration</h3>
+                    <p>Placement for hospital administrators and healthcare executives.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="stats">
+        <div class="stats-container">
+            <div class="stat-item">
+                <div class="stat-number">8,500+</div>
+                <div class="stat-label">Medical Professionals Placed</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">99%</div>
+                <div class="stat-label">Client Satisfaction</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">120+</div>
+                <div class="stat-label">Healthcare Partners</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">25+</div>
+                <div class="stat-label">Countries Served</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="process">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Recruitment Process</h2>
+            </div>
+            <div class="process-steps one-line">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h4>Requirement Analysis</h4>
+                    <p>Understanding healthcare staffing needs</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h4>Talent Sourcing</h4>
+                    <p>Identifying qualified medical professionals</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h4>Credential Verification</h4>
+                    <p>Validating licenses and certifications</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h4>Client Interviews</h4>
+                    <p>Coordinating and facilitating interviews</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">5</div>
+                    <h4>Placement</h4>
+                    <p>Offer negotiation and onboarding support</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="resume-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Submit Your Resume</h2>
+            </div>
+            <div class="upload-container">
+                <p>Join our network of healthcare professionals. Upload your resume to be considered for opportunities in the medical field.</p>
+                
+                <div class="upload-box">
+                    <div class="upload-icon">
+                        <i class="fas fa-file-upload"></i>
+                    </div>
+                    <h3>Upload Your Resume</h3>
+                    <p>Supported formats: PDF, DOC, DOCX (Max 5MB)</p>
+                    
+                    <input type="file" id="resume-upload" class="file-input" accept=".pdf,.doc,.docx">
+                    <label for="resume-upload" class="file-label">Choose File</label>
+                    <span id="file-name">No file chosen</span>
+                </div>
+                
+                <form id="resume-form">
+                    <div class="form-group">
+                        <label for="fullname">Full Name</label>
+                        <input type="text" id="fullname" placeholder="Enter your full name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" placeholder="Enter your email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" placeholder="Enter your phone number" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="specialization">Specialization</label>
+                        <select id="specialization" required>
+                            <option value="">Select your specialization</option>
+                            <option value="physician">Physician</option>
+                            <option value="nursing">Nursing</option>
+                            <option value="pharmacy">Pharmacy</option>
+                            <option value="allied">Allied Health</option>
+                            <option value="admin">Administration</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="position">Desired Position</label>
+                        <input type="text" id="position" placeholder="Enter desired position" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Cover Message (Optional)</label>
+                        <textarea id="message" rows="4" placeholder="Tell us about your medical experience"></textarea>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn">Submit Application</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Navigation Buttons -->
+    <div style="display: flex; justify-content: space-between; align-items: center; width: 100%; max-width: 1200px; margin: 3rem auto 2rem auto; padding: 0 2rem;">
+        <a href="../index.html" style="background: var(--gold); color: var(--navy-blue); font-weight: bold; padding: 14px 38px; border-radius: 30px; font-size: 1.08rem; box-shadow: 0 4px 8px rgba(212,175,55,0.13); text-decoration: none; transition: background 0.3s, color 0.3s;">Back to Recruitment Services</a>
+        <a href="../request-consultation.html" style="background: var(--gold); color: var(--navy-blue); font-weight: bold; padding: 14px 38px; border-radius: 30px; font-size: 1.08rem; box-shadow: 0 4px 8px rgba(212,175,55,0.13); text-decoration: none; transition: background 0.3s, color 0.3s;">Request a Consultation</a>
+    </div>
+
+    <footer class="footer-contact">
+      <div class="footer-grid">
+        <div class="footer-box">
+          <img src="../synture logo.jpg" alt="Synture Logo" class="footer-logo" style="width:100px; height:100px; margin-bottom:1rem; display:block; border-radius:50%; object-fit:cover; box-shadow:0 2px 8px rgba(0,0,0,0.10);">
+          <p>Recruitment Solutions by Synture</p>
+        </div>
+        <div class="footer-box">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../industry-focus/it software.html">IT & Software</a></li>
+            <li><a href="../industry-focus/bpo-kpo.html">BPO/KPO</a></li>
+            <li><a href="../industry-focus/healthcare.html">Healthcare</a></li>
+            <li><a href="../industry-focus/retail.html">Retail</a></li>
+            <li><a href="../industry-focus/bfsi.html">BFSI</a></li>
+            <li><a href="../industry-focus/manufacturing.html">Manufacturing</a></li>
+          </ul>
+        </div>
+        <div class="footer-box">
+          <h3>Contact</h3>
+          <ul>
+            <li>Email: contact@intechra.com</li>
+            <li>Phone: (555) 123-4567</li>
+            <li>Location: Mumbai, India</li>
+          </ul>
+          <div class="social-icons">
+            <img src="../facebooklogo.png" alt="Facebook" style="width:32px; height:32px; margin-right:10px; opacity:0.92; border-radius:50%; background:#fff; box-shadow:0 2px 8px rgba(0,0,0,0.10); border:1.5px solid #e0e0e0; transition:opacity 0.3s; vertical-align:middle; object-fit:cover;">
+            </a>
+            <a href="#" style="display:inline-block;">
+              <img src="../linkedin.png" alt="LinkedIn" style="width:32px; height:32px; margin-right:10px; opacity:0.92; border-radius:50%; background:#fff; box-shadow:0 2px 8px rgba(0,0,0,0.10); border:1.5px solid #e0e0e0; transition:opacity 0.3s; vertical-align:middle; object-fit:cover;">
+            </a>
+            <a href="#" style="display:inline-block;">
+              <img src="../twitter.png" alt="Twitter" style="width:32px; height:32px; margin-right:0; opacity:0.92; border-radius:50%; background:#fff; box-shadow:0 2px 8px rgba(0,0,0,0.10); border:1.5px solid #e0e0e0; transition:opacity 0.3s; vertical-align:middle; object-fit:cover;">
+            </a>
+          </div>
+        </div>
+      </div>
+      <div style="text-align:center; margin-top:2rem; font-size:0.95rem; color:#bbb;">&copy; 2025 Synture. All rights reserved.</div>
+    </footer>
+
+    <script>
+        // File upload functionality
+        document.getElementById('resume-upload').addEventListener('change', function(e) {
+            const fileName = e.target.files[0] ? e.target.files[0].name : 'No file chosen';
+            document.getElementById('file-name').textContent = fileName;
+        });
+
+        // Form submission handling
+        document.getElementById('resume-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const fileInput = document.getElementById('resume-upload');
+            if (!fileInput.files[0]) {
+                alert('Please upload your resume');
+                return;
+            }
+            
+            // In a real application, you would send the form data to a server here
+            alert('Application submitted successfully! We will review your resume and contact you soon.');
+            this.reset();
+            document.getElementById('file-name').textContent = 'No file chosen';
+        });
+    </script>
+</body>
+</html>

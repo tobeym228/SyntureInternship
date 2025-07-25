@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quotes Collection</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --navy-blue: #001f3f;
+            --gold: #D4AF37;
+            --black: #222222;
+            --white: #ffffff;
+            --light-gray: #f5f5f5;
+            --dark-gold: #b38f00;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        body {
+            background-color: var(--light-gray);
+            color: var(--black);
+            line-height: 1.6;
+        }
+        .header {
+            background: linear-gradient(rgba(0,31,63,0.72), rgba(0,31,63,0.72)), url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            color: var(--white);
+            padding: 2.5rem 0 2rem;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+            position: relative;
+            /* The new image features a pen and paper, evoking the idea of writing and quotes. */
+        }
+        .header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--gold);
+            margin-bottom: 0.5rem;
+        }
+        .header p {
+            font-size: 1.2rem;
+            color: var(--white);
+            margin-bottom: 1rem;
+        }
+        .tagline {
+            background: var(--gold);
+            color: var(--navy-blue);
+            padding: 10px 28px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-radius: 30px;
+            display: inline-block;
+            margin-top: 0.5rem;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+        }
+        .container {
+            max-width: 1200px;
+            margin: 2.5rem auto;
+            padding: 0 2rem;
+        }
+        .section-title {
+            text-align: center;
+            margin-bottom: 2.5rem;
+            position: relative;
+        }
+        .section-title h2 {
+            font-size: 2rem;
+            color: #0074D9;
+            display: inline-block;
+            padding-bottom: 10px;
+        }
+        .section-title h2::after {
+            display: none !important;
+        }
+        .quotes {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        .quote-form-container {
+            max-width: 1000px;
+            width: 95%;
+            margin: 3.5rem auto 0 auto;
+            background: #fff;
+            border-radius: 18px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.13);
+            padding: 2.5rem 3.5rem 2.5rem 3.5rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border: 1.5px solid #f0f0f0;
+        }
+        .quote-form-container h3 {
+            color: #0074D9;
+            font-size: 3.2rem;
+            margin-bottom: 1.5rem;
+            font-weight: 900;
+            letter-spacing: 0.5px;
+            text-align: center;
+            line-height: 1.1;
+        }
+        .quote-form {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 1.1rem;
+        }
+        .quote-form label {
+            font-weight: 500;
+            color: #222;
+            margin-bottom: 0.3rem;
+            font-size: 1.05rem;
+        }
+        .quote-form input,
+        .quote-form textarea {
+            width: 100%;
+            padding: 1.2rem 1.2rem;
+            border: 1.5px solid #d4d4d4;
+            border-radius: 7px;
+            font-size: 1.25rem;
+            background: #f8f8f8;
+            transition: border 0.2s;
+            resize: none;
+            min-height: 56px;
+        }
+        .quote-form select {
+            width: 100%;
+            padding: 0.7rem 1.2rem;
+            border: 1.5px solid #d4d4d4;
+            border-radius: 7px;
+            font-size: 1.08rem;
+            background: #f8f8f8;
+            transition: border 0.2s;
+            min-height: 40px;
+        }
+        
+        
+        .quote-form input:focus,
+        .quote-form select:focus,
+        .quote-form textarea:focus {
+            border: 1.5px solid #0074D9;
+            outline: none;
+        }
+        .quote-form button {
+            background: #0074D9;
+            color: #fff;
+            border: none;
+            border-radius: 7px;
+            padding: 0.9rem 0;
+            font-size: 1.13rem;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 0.7rem;
+            transition: background 0.2s;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+        }
+        .quote-form button:hover {
+            background: #005bb5;
+            color: #fff;
+        }
+        
+        .quote-form-container h3 {
+            color: var(--navy-blue);
+            font-size: 1.35rem;
+            margin-bottom: 1.2rem;
+            font-weight: 700;
+        }
+        .quote-form {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 1.1rem;
+        }
+        .quote-form label {
+            font-weight: 500;
+            color: var(--navy-blue);
+            margin-bottom: 0.3rem;
+        }
+        .quote-form input,
+        .quote-form textarea {
+            width: 100%;
+            padding: 0.7rem 1rem;
+            border: 1.5px solid #d4d4d4;
+            border-radius: 7px;
+            font-size: 1rem;
+            background: #f8f8f8;
+            transition: border 0.2s;
+            resize: none;
+        }
+        .quote-form input:focus,
+        .quote-form textarea:focus {
+            border: 1.5px solid var(--gold);
+            outline: none;
+        }
+        .quote-form button {
+            background: var(--navy-blue);
+            color: var(--white);
+            border: none;
+            border-radius: 7px;
+            padding: 0.8rem 0;
+            font-size: 1.08rem;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 0.5rem;
+            transition: background 0.2s;
+        }
+        .quote-form button:hover {
+            background: var(--gold);
+            color: var(--navy-blue);
+        }
+        .quote-card {
+            background: var(--white);
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            border: none;
+            text-align: center;
+            padding: 2.5rem 1.5rem 2rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
+        }
+        .quote-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.13);
+        }
+        .quote-icon {
+            font-size: 2.5rem;
+            color: var(--gold);
+            margin-bottom: 1.2rem;
+        }
+        .quote-text {
+            color: var(--navy-blue);
+            font-size: 1.18rem;
+            font-style: italic;
+            margin-bottom: 1.2rem;
+        }
+        .quote-author {
+            color: var(--dark-gold);
+            font-weight: 600;
+            font-size: 1.05rem;
+        }
+        .footer-contact {
+          background: #0a0f3c;
+          color: rgb(244, 239, 239);
+          padding: 3rem 1rem;
+          font-family: 'Segoe UI', sans-serif;
+        }
+        .footer-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+          gap: 2rem;
+          max-width: 1200px;
+          margin: 0 auto;
+        }
+        .footer-logo {
+          width: 100px;
+          margin-bottom: 1rem;
+        }
+        .footer-box h3 {
+          color: #f1c40f;
+          margin-bottom: 0.5rem;
+        }
+        .footer-box ul {
+          list-style: none;
+          padding: 0;
+        }
+        .footer-box ul li {
+          margin-bottom: 0.4rem;
+        }
+        .footer-box ul li a {
+          color: #ddd;
+          text-decoration: none;
+          transition: color 0.3s ease;
+        }
+        .footer-box ul li a:hover {
+          color: #f1c40f;
+        }
+        .social-icons img {
+          width: 24px;
+          margin-right: 8px;
+          opacity: 0.8;
+          transition: opacity 0.3s ease;
+        }
+        .social-icons img:hover {
+          opacity: 1;
+        }
+        @media (max-width: 900px) {
+            .quotes {
+                grid-template-columns: 1fr !important;
+                gap: 1.2rem !important;
+            }
+            .quote-form-container {
+                max-width: 98vw;
+                padding: 2rem 1rem 2rem 1rem;
+            }
+        }
+        @media (max-width: 600px) {
+            .container {
+                padding: 1rem !important;
+            }
+            .header h1 {
+                font-size: 1.5rem;
+            }
+            .section-title h2 {
+                font-size: 1.2rem;
+            }
+            .quote-form-container {
+                max-width: 100vw;
+                padding: 1.2rem 0.3rem 1.2rem 0.3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1>Quotes Collection</h1>
+        <p>Inspiring words to motivate and uplift you</p>
+        <div class="tagline">Curated Quotes for Every Occasion</div>
+    </header>
+    <section class="container">
+        <div class="section-title">
+            <h2>Featured Quotes</h2>
+        </div>
+        <div class="quotes">
+            <div class="quote-card">
+                <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+                <div class="quote-text">“The only way to do great work is to love what you do.”</div>
+                <div class="quote-author">– Steve Jobs</div>
+            </div>
+            <div class="quote-card">
+                <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+                <div class="quote-text">“Success is not the key to happiness. Happiness is the key to success.”</div>
+                <div class="quote-author">– Albert Schweitzer</div>
+            </div>
+            <div class="quote-card">
+                <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+                <div class="quote-text">“Believe you can and you're halfway there.”</div>
+                <div class="quote-author">– Theodore Roosevelt</div>
+            </div>
+        </div>
+        <div class="quote-form-container">
+            <h3>Get a Quote</h3>
+            <form class="quote-form">
+                <div>
+                    <label for="fullname">Full Name</label>
+                    <input type="text" id="fullname" name="fullname" placeholder="Full Name" required>
+                </div>
+                <div>
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" placeholder="Email Address" required>
+                </div>
+                <div>
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" placeholder="Phone Number" required pattern="[0-9+\-() ]*">
+                </div>
+                <div>
+                    <label for="service">Select Service</label>
+                    <select id="service" name="service" required>
+                        <option value="">-- Choose One --</option>
+                        <option value="Permanent Staffing">Permanent Staffing</option>
+                        <option value="Contract Staffing">Contract Staffing</option>
+                        <option value="Executive Search">Executive Search</option>
+                        <option value="Campus Recruitment">Campus Recruitment</option>
+                        <option value="C2H">C2H</option>
+                        <option value="RPO">RPO</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="requirements">Describe Your Requirements</label>
+                    <textarea id="requirements" name="requirements" rows="3" placeholder="Describe your requirements..." required></textarea>
+                </div>
+                <button type="submit">Get Quote</button>
+            </form>
+        </div>
+    </section>
+    <footer class="footer-contact">
+      <div class="footer-grid">
+        <div class="footer-box">
+        <img src="../synture logo.jpg" alt="Synture Logo" class="footer-logo" style="width:100px; height:100px; margin-bottom:1rem; display:block; border-radius:50%; object-fit:cover; box-shadow:0 2px 8px rgba(0,0,0,0.10);">
+          <p>Recruitment Solutions by Synture</p>
+        </div>
+        <div class="footer-box">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../industry-focus/it software.html">IT & Software</a></li>
+            <li><a href="../industry-focus/bpo-kpo.html">BPO/KPO</a></li>
+            <li><a href="../industry-focus/healthcare.html">Healthcare</a></li>
+            <li><a href="../industry-focus/retail.html">Retail</a></li>
+            <li><a href="../industry-focus/bfsi.html">BFSI</a></li>
+            <li><a href="../industry-focus/manufacturing.html">Manufacturing</a></li>
+          </ul>
+        </div>
+        <div class="footer-box">
+          <h3>Contact</h3>
+          <ul>
+            <li>Email: contact@intechra.com</li>
+            <li>Phone: (555) 123-4567</li>
+            <li>Location: Mumbai, India</li>
+          </ul>
+          <div class="social-icons">
+            <a href="#" style="display:inline-block;">
+              <img src="../facebooklogo.png" alt="Facebook" style="width:32px; height:32px; margin-right:10px; opacity:0.92; border-radius:50%; background:#fff; box-shadow:0 2px 8px rgba(0,0,0,0.10); border:1.5px solid #e0e0e0; transition:opacity 0.3s; vertical-align:middle; object-fit:cover;">
+            </a>
+            <a href="#" style="display:inline-block;">
+              <img src="../linkedin.png" alt="LinkedIn" style="width:32px; height:32px; margin-right:10px; opacity:0.92; border-radius:50%; background:#fff; box-shadow:0 2px 8px rgba(0,0,0,0.10); border:1.5px solid #e0e0e0; transition:opacity 0.3s; vertical-align:middle; object-fit:cover;">
+            </a>
+            <a href="#" style="display:inline-block;">
+              <img src="../twitter.png" alt="Twitter" style="width:32px; height:32px; margin-right:0; opacity:0.92; border-radius:50%; background:#fff; box-shadow:0 2px 8px rgba(0,0,0,0.10); border:1.5px solid #e0e0e0; transition:opacity 0.3s; vertical-align:middle; object-fit:cover;">
+            </a>
+          </div>
+        </div>
+      </div>
+      <div style="text-align:center; margin-top:2rem; font-size:0.95rem; color:#bbb;">&copy; 2025 Synture. All rights reserved.</div>
+    </footer>
+</body>
+</html>

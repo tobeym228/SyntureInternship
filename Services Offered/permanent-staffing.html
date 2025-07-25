@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Permanent Staffing Solutions | Hire Full-Time Employees</title>
+    <link rel="stylesheet" href="../styles1.css">
+    <style>
+        :root {
+            --navy-blue: #001f3f;
+            --gold: #D4AF37;
+            --black: #222222;
+            --white: #ffffff;
+            --light-gray: #f5f5f5;
+            --dark-gold: #b38f00;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--light-gray);
+            color: var(--black);
+            line-height: 1.6;
+        }
+
+        .header {
+            background: linear-gradient(rgba(0,31,63,0.85), rgba(0,31,63,0.85)), url('https://images.unsplash.com/photo-1515169067865-5387a1b0a3a9?ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80'); /* Permanent staffing theme */
+            background-size: cover;
+            background-position: center;
+            color: var(--white);
+            padding: 2.5rem 0 2rem;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--gold);
+            margin-bottom: 0.5rem;
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            color: var(--white);
+            margin-bottom: 1rem;
+        }
+
+        .tagline {
+            background: var(--gold);
+            color: var(--navy-blue);
+            padding: 10px 28px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-radius: 30px;
+            display: inline-block;
+            margin-top: 0.5rem;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 2.5rem auto;
+            padding: 0 2rem;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 2.5rem;
+            position: relative;
+        }
+
+        .section-title h2 {
+            font-size: 2.3rem;
+            color: var(--black); /* Changed from navy/gold/green to black for consistency */
+            display: inline-block;
+            /* position: relative; */
+        }
+        .services {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 24px;
+            margin-top: 30px;
+        }
+        .service-card {
+            flex: 1 1 220px;
+            min-width: 220px;
+            max-width: 320px;
+            margin: 0 8px;
+            background: var(--main-white);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            border: 1px solid #e8f5e9;
+            transition: transform 0.3s, box-shadow 0.3s;
+            padding: 28px 22px;
+        }
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+        .service-card h3 {
+            color: var(--black); /* Changed from navy/gold/green to black for consistency */
+            margin-bottom: 10px;
+        }
+        .service-card p {
+            color: #555;
+        }
+        .benefits {
+            background: var(--white);
+            border-radius: 10px;
+            margin: 40px 0;
+            padding: 30px 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.07);
+        }
+        .benefits-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+            margin: 0 20px;
+        }
+        .benefit-card {
+            background: var(--light-gray);
+            border: 2px solid var(--gold);
+            border-radius: 8px;
+            padding: 24px 18px;
+            text-align: center;
+            font-weight: 500;
+            min-width: 220px;
+            max-width: 300px;
+            flex: 1 1 220px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .benefit-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.10);
+        }
+        .process {
+            background: #fff; /* Changed from green to white */
+            padding: 50px 0;
+            border-radius: 10px;
+            margin-bottom: 40px;
+        }
+        .process-steps {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+        }
+        .step {
+            width: 200px;
+            text-align: center;
+            padding: 20px;
+            background: var(--main-white);
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.07);
+        }
+        .step-number {
+            width: 50px;
+            height: 50px;
+            background: var(--gold);
+            color: var(--black);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin: 0 auto 15px;
+        }
+        .cta-section {
+            background: linear-gradient(rgba(0,31,63,0.93), rgba(0,31,63,0.97)), url('https://images.unsplash.com/photo-1515168833906-d2a3b82b1e2c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80');
+            background-size: cover;
+            background-position: center;
+            color: var(--white);
+            text-align: center;
+            padding: 3.5rem 2rem;
+            border-radius: 10px;
+            margin-bottom: 2.5rem;
+        }
+        .cta-section h2 {
+            font-size: 2.2rem;
+            margin-bottom: 18px;
+        }
+        .cta-section p {
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+        .btn {
+            display: inline-block;
+            background: var(--main-yellow);
+            color: var(--main-black);
+            font-size: 1.1rem;
+            font-weight: bold;
+            text-decoration: none;
+            padding: 14px 38px;
+            border-radius: 50px;
+            transition: all 0.3s;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border: none;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background: var(--main-black);
+            color: var(--main-white);
+            transform: translateY(-3px);
+        }
+        .back-link {
+            display: inline-block;
+            background: var(--navy-blue) !important;
+            color: var(--white) !important;
+            border-radius: 30px;
+            padding: 14px 36px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-decoration: none;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            transition: transform 0.2s;
+            width: fit-content;
+            margin: 50px auto 30px auto;
+        }
+        .back-link:hover {
+            background: var(--navy-blue) !important;
+            color: var(--white) !important;
+            transform: translateY(-3px) scale(1.04);
+        }
+        .resume-section {
+            background: #fff;
+            padding: 50px 0;
+            border-radius: 10px;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        .upload-container {
+            max-width: 700px !important;
+            margin: 0 auto;
+            background: var(--white);
+            border-radius: 12px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+            padding: 2.5rem 2.5rem !important;
+            color: var(--black) !important;
+            border: 1.5px solid var(--gold);
+        }
+        .upload-container p,
+        .upload-container h3,
+        .upload-container label,
+        .upload-container input,
+        .upload-container select,
+        .upload-container textarea,
+        .upload-container span {
+            color: var(--black) !important;
+        }
+        .upload-box {
+            color: var(--black) !important;
+            background: var(--light-gray);
+            border: 2px dashed var(--gold);
+            border-radius: 10px;
+            padding: 40px 20px;
+            margin: 0 auto 30px;
+            position: relative;
+        }
+        .upload-icon {
+            font-size: 3rem;
+            color: var(--main-green);
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .file-input {
+            display: none;
+        }
+        .file-label {
+            display: inline-block;
+            background: var(--gold);
+            color: var(--black);
+            padding: 12px 24px;
+            border-radius: 20px;
+            font-weight: bold;
+            text-decoration: none;
+            margin-top: 10px;
+            margin-right: 8px;
+            transition: background 0.3s;
+            box-shadow: 0 2px 8px rgba(212,175,55,0.13);
+        }
+        .file-label:hover {
+            background: var(--dark-gold);
+            color: var(--white);
+        }
+        #file-name {
+            color: var(--black);
+            background: var(--gold);
+            font-weight: 500;
+            padding: 6px 18px;
+            border-radius: 20px;
+            margin-left: 0;
+            display: inline-block;
+        }
+        .submit-btn {
+            background: var(--gold);
+            color: var(--black);
+            font-weight: bold;
+            padding: 12px 36px;
+            border-radius: 20px;
+            margin-top: 1rem;
+            border: none;
+            box-shadow: 0 4px 8px rgba(212,175,55,0.13);
+            transition: background 0.3s, color 0.3s;
+        }
+        .submit-btn:hover {
+            background: var(--dark-gold);
+            color: var(--white);
+        }
+        .back-buttons {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 18px;
+            margin: 32px auto 0 auto;
+            width: fit-content;
+        }
+        .back-link {
+            display: inline-block;
+            background: #ffe066;
+            color: #181818;
+            border-radius: 20px;
+            padding: 10px 32px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-decoration: none;
+            box-shadow: 0 2px 8px rgba(24,24,24,0.08);
+            transition: background 0.2s, color 0.2s, transform 0.2s;
+        }
+        .back-link:hover {
+            background: #1db954;
+            color: #fff;
+            transform: translateY(-2px) scale(1.04);
+        }
+        .form-row {
+            display: flex;
+            gap: 24px;
+            flex-wrap: wrap;
+            margin-bottom: 12px;
+        }
+        .form-group {
+            flex: 1 1 220px;
+            min-width: 220px;
+            margin-bottom: 0;
+        }
+        #resume-form textarea {
+            resize: vertical;
+            min-height: 48px;
+        }
+        @media (max-width: 768px) {
+            .process-steps {
+                flex-direction: column;
+                align-items: center;
+            }
+            .step {
+                width: 90%;
+                max-width: 400px;
+            }
+            .upload-container {
+                padding: 0 20px;
+            }
+        }
+        @media (max-width: 700px) {
+            .form-row {
+                flex-direction: column;
+                gap: 0;
+            }
+        }
+        @media (max-width: 900px) {
+            .benefits-grid {
+                flex-direction: column;
+                gap: 1.2rem;
+            }
+        
+    }
+
+    /* Footer Styles */
+    .footer-contact {
+        background: var(--navy-blue);
+        color: var(--white);
+        padding: 2.5rem 0 1.2rem 0;
+        margin-top: 3rem;
+        box-shadow: 0 -2px 10px rgba(0,0,0,0.08);
+    }
+    .footer-grid {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        max-width: 1200px;
+        margin: 0 auto;
+        gap: 32px;
+        padding: 0 2rem;
+    }
+    .footer-box {
+        flex: 1 1 220px;
+        min-width: 220px;
+        margin-bottom: 1.5rem;
+    }
+    .footer-logo {
+        width: 120px;
+        margin-bottom: 1rem;
+        border-radius: 10px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+    }
+    .footer-box h3 {
+        color: var(--gold);
+        margin-bottom: 0.7rem;
+        font-size: 1.15rem;
+    }
+    .footer-box ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+    .footer-box ul li {
+        margin-bottom: 0.5rem;
+    }
+    .footer-box ul li a {
+        color: var(--white);
+        text-decoration: none;
+        transition: color 0.2s;
+    }
+    .footer-box ul li a:hover {
+        color: var(--gold);
+        text-decoration: underline;
+    }
+    .social-icons {
+        margin-top: 1rem;
+    }
+    .social-icons a {
+        display: inline-block;
+        margin-right: 12px;
+        transition: transform 0.2s;
+    }
+    .social-icons a:hover {
+        transform: scale(1.15);
+    }
+    .social-icons img {
+        width: 28px;
+        height: 28px;
+        filter: brightness(0) invert(1);
+    }
+    @media (max-width: 900px) {
+        .footer-grid {
+            flex-direction: column;
+            gap: 1.2rem;
+            padding: 0 1rem;
+        }
+        .footer-box {
+            min-width: 0;
+        }
+    }
+        
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1>Permanent Staffing Solutions</h1>
+        <p>Find and hire the best full-time employees for your organization</p>
+        <div class="tagline">Long-Term Talent for Sustainable Growth</div>
+    </header>
+    <div class="container">
+        <div class="section-title">
+            <h2>Comprehensive Permanent Hiring</h2>
+        </div>
+        <div class="services" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 24px; margin-top: 30px;">
+          <div class="service-card" style="flex: 1 1 220px; min-width: 220px; max-width: 320px; margin: 0 8px;">
+            <h3>Direct Placement</h3>
+            <p>We specialize in direct placement of qualified professionals for long-term positions.</p>
+          </div>
+          <div class="service-card" style="flex: 1 1 220px; min-width: 220px; max-width: 320px; margin: 0 8px;">
+            <h3>Industry Specialists</h3>
+            <p>Recruiters who understand your specific sector requirements and culture.</p>
+          </div>
+          <div class="service-card" style="flex: 1 1 220px; min-width: 220px; max-width: 320px; margin: 0 8px;">
+            <h3>90-Day Guarantee</h3>
+            <p>Free replacement if the candidate doesn't work out within 90 days.</p>
+          </div>
+          <div class="service-card" style="flex: 1 1 220px; min-width: 220px; max-width: 320px; margin: 0 8px;">
+            <h3>Reduced Turnover</h3>
+            <p>Our candidates have 30% lower attrition rates compared to industry averages.</p>
+          </div>
+        </div>
+        <section class="benefits">
+            <div class="section-title">
+                <h2>Why Choose Our Permanent Staffing?</h2>
+            </div>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <h4>Quality Talent</h4>
+                    <p>Access to a large pool of pre-screened, high-quality candidates.</p>
+                </div>
+                <div class="benefit-card">
+                    <h4>Customized Search</h4>
+                    <p>Tailored search and selection process for your unique needs.</p>
+                </div>
+                <div class="benefit-card">
+                    <h4>Onboarding Support</h4>
+                    <p>We ensure a smooth transition and onboarding for new hires.</p>
+                </div>
+                <div class="benefit-card">
+                    <h4>Long-Term Success</h4>
+                    <p>Focus on retention and cultural fit for sustainable growth.</p>
+                </div>
+            </div>
+        </section>
+        <section class="process">
+            <div class="section-title">
+                <h2>Our Permanent Hiring Process</h2>
+            </div>
+            <div class="process-steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h4>Needs Analysis</h4>
+                    <p>Understanding your requirements and company culture.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h4>Targeted Search</h4>
+                    <p>Sourcing qualified candidates from multiple channels.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h4>Rigorous Screening</h4>
+                    <p>Technical and behavioral assessments for best-fit selection.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h4>Onboarding Support</h4>
+                    <p>Ensuring smooth transition and integration for new hires.</p>
+                </div>
+            </div>
+        </section>
+        <section class="resume-section">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Upload Your Resume</h2>
+                </div>
+                <div class="upload-container" style="max-width: 500px; margin: 0 auto; background: var(--light-gray); border-radius: 12px; box-shadow: 0 4px 16px rgba(0,0,0,0.08); padding: 2.5rem 1.5rem;">
+                    <p>Join our network of professionals. Upload your resume to be considered for exciting opportunities in this domain.</p>
+                    <div class="upload-box">
+                        <div class="upload-icon">
+                            <i class="fas fa-file-upload"></i>
+                        </div>
+                        <h3>Upload Your Resume</h3>
+                        <p>Supported formats: PDF, DOC, DOCX (Max 5MB)</p>
+                        <input type="file" id="resume-upload" class="file-input" accept=".pdf,.doc,.docx">
+                        <label for="resume-upload" class="file-label">Choose File</label>
+                        <span id="file-name">No file chosen</span>
+                    </div>
+                    <form id="resume-form">
+                        <div class="form-group">
+                            <label for="fullname">Full Name</label>
+                            <input type="text" id="fullname" placeholder="Enter your full name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" placeholder="Enter your email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" placeholder="Enter your phone number" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="experience">Years of Experience</label>
+                            <select id="experience" required>
+                                <option value="">Select experience level</option>
+                                <option value="0-2">0-2 years</option>
+                                <option value="3-5">3-5 years</option>
+                                <option value="6-10">6-10 years</option>
+                                <option value="10+">10+ years</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="position">Desired Position</label>
+                            <input type="text" id="position" placeholder="Enter desired position" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Cover Message (Optional)</label>
+                            <textarea id="message" rows="4" placeholder="Tell us about your skills"></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn" style="background: var(--gold); color: var(--black); display: block; margin: 1.5rem auto 0 auto;">Submit Application</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+        <div class="navigation-buttons" style="display: flex; justify-content: space-between; align-items: center; width: 100%; max-width: 1200px; margin: 32px auto 0 auto; padding: 0 20px;">
+          <a href="../index.html" class="btn" style="background: var(--gold); color: var(--black); font-weight: bold; padding: 14px 38px; border-radius: 30px; font-size: 1.08rem; box-shadow: 0 4px 8px rgba(212,175,55,0.13); text-decoration: none; transition: background 0.3s, color 0.3s; margin: 0;">&larr; Back to Recruitment Services</a>
+          <a href="../request-consultation.html" class="btn" style="background: var(--gold); color: var(--black); font-weight: bold; padding: 14px 38px; border-radius: 30px; font-size: 1.08rem; box-shadow: 0 4px 8px rgba(212,175,55,0.13); text-decoration: none; transition: background 0.3s, color 0.3s;">Request a Consultation</a>
+        </div>
+    </div>
+    <footer class="footer-contact">
+      <div class="footer-grid">
+        <div class="footer-box">
+          <img src="../synture logo.jpg" alt="Synture Logo" class="footer-logo" style="width:100px; height:100px; margin-bottom:1rem; display:block; border-radius:50%; object-fit:cover; box-shadow:0 2px 8px rgba(0,0,0,0.10);">
+          <p>Recruitment Solutions by Synture</p>
+        </div>
+        <div class="footer-box">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../Services Offered/campus-recruitment.html">Campus Recruitment</a></li>
+            <li><a href="../Services Offered/permanent-staffing.html">Permanent Staffing</a></li>
+            <li><a href="../Services Offered/c2h.html">Contract-to-Hire</a></li>
+            <li><a href="../Services Offered/contract-staffing.html">Contract Staffing</a></li>
+            <li><a href="../Services Offered/executive-search.html">Executive Search</a></li>
+            <li><a href="../Services Offered/rpo.html">RPO</a></li>
+          </ul>
+        </div>
+        <div class="footer-box">
+          <h3>Contact</h3>
+          <ul>
+            <li>Email: contact@synture.com</li>
+            <li>Phone: (555) 123-4567</li>
+            <li>Location: Mumbai, India</li>
+          </ul>
+          <div class="social-icons">
+            <a href="#" style="display:inline-block; margin-right:10px;">
+              <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" style="vertical-align:middle; border-radius:50%; background:#fff; box-shadow:0 2px 8px rgba(0,0,0,0.10); border:1.5px solid #e0e0e0;">
+                <rect width="32" height="32" rx="16" fill="#1877F3"/>
+                <path d="M22 16.001c0-3.313-2.687-6-6-6s-6 2.687-6 6c0 2.991 2.191 5.464 5.063 5.931v-4.194h-1.523v-1.737h1.523v-1.325c0-1.507.893-2.34 2.262-2.34.656 0 1.343.117 1.343.117v1.477h-.757c-.747 0-.98.464-.98.941v1.13h1.669l-.267 1.737h-1.402v4.194C19.809 21.465 22 18.992 22 16.001z" fill="#fff"/>
+              </svg>
+            </a>
+            <a href="#" style="display:inline-block; margin-right:10px;">
+              <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" style="vertical-align:middle; border-radius:50%; background:#fff; box-shadow:0 2px 8px rgba(0,0,0,0.10); border:1.5px solid #e0e0e0;">
+                <rect width="32" height="32" rx="16" fill="#0A66C2"/>
+                <path d="M10.667 13.333h2.666v8h-2.666v-8zm1.333-2.667c-.88 0-1.6-.72-1.6-1.6 0-.88.72-1.6 1.6-1.6.88 0 1.6.72 1.6 1.6 0 .88-.72 1.6-1.6 1.6zm3.333 2.667h2.56v1.093h.037c.357-.677 1.23-1.393 2.533-1.393 2.707 0 3.2 1.78 3.2 4.093v4.207h-2.667v-3.733c0-.893-.017-2.04-1.24-2.04-1.24 0-1.433.967-1.433 1.967v3.806h-2.667v-8z" fill="#fff"/>
+              </svg>
+            </a>
+            <a href="#" style="display:inline-block; margin-right:0;">
+              <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" style="vertical-align:middle; border-radius:50%; background:#fff; box-shadow:0 2px 8px rgba(0,0,0,0.10); border:1.5px solid #e0e0e0;">
+                <rect width="32" height="32" rx="16" fill="#1DA1F2"/>
+                <path d="M25.333 11.333c-.64.28-1.32.467-2.04.553.733-.44 1.293-1.133 1.56-1.96-.687.407-1.447.703-2.257.863-.647-.69-1.573-1.12-2.6-1.12-2.027 0-3.667 1.64-3.667 3.667 0 .287.033.567.093.833-3.05-.153-5.753-1.613-7.567-3.833-.317.547-.5 1.183-.5 1.863 0 1.287.656 2.423 1.653 3.09-.61-.02-1.183-.187-1.687-.467v.047c0 1.797 1.28 3.297 2.98 3.64-.313.087-.643.133-.983.133-.24 0-.47-.023-.697-.067.47 1.47 1.833 2.54 3.447 2.57-1.263.993-2.857 1.587-4.587 1.587-.297 0-.59-.017-.88-.053 1.633 1.047 3.573 1.66 5.66 1.66 6.793 0 10.52-5.627 10.52-10.52 0-.16-.003-.32-.01-.48.723-.52 1.35-1.173 1.847-1.92z" fill="#fff"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div style="text-align:center; margin-top:2rem; font-size:0.95rem; color:#bbb;">&copy; 2025 Synture. All rights reserved.</div>
+    </footer>
+    <script>
+        // File upload functionality
+        document.getElementById('resume-upload').addEventListener('change', function(e) {
+            const fileName = e.target.files[0] ? e.target.files[0].name : 'No file chosen';
+            document.getElementById('file-name').textContent = fileName;
+        });
+        // Form submission handling
+        document.getElementById('resume-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const fileInput = document.getElementById('resume-upload');
+            if (!fileInput.files[0]) {
+                alert('Please upload your resume');
+                return;
+            }
+            alert('Application submitted successfully! We will review your resume and contact you soon.');
+            this.reset();
+            document.getElementById('file-name').textContent = 'No file chosen';
+        });
+    </script>
+</body>
+</html>

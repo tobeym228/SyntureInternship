@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Executive Search | C-Level Recruitment</title>
+    <link rel="stylesheet" href="../styles1.css">
+    <style>
+        :root {
+            --navy-blue: #001f3f;
+            --gold: #D4AF37;
+            --black: #222222;
+            --white: #ffffff;
+            --light-gray: #f5f5f5;
+            --dark-gold: #b38f00;
+        }
+        body {
+            background-color: var(--light-gray);
+            color: var(--black);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+        .header {
+            background: linear-gradient(rgba(0,31,63,0.85), rgba(0,31,63,0.85)), url('https://images.unsplash.com/photo-1503676382389-4809596d5290?ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80'); /* Executive search theme */
+            background-size: cover;
+            background-position: center;
+            color: var(--white);
+            padding: 2.5rem 0 2rem;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+            position: relative;
+            width: 100vw;
+            left: 50%;
+            right: 50%;
+            margin-left: -50vw;
+            margin-right: -50vw;
+            top: 0;
+        }
+        .header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--gold);
+            margin-bottom: 0.5rem;
+        }
+        .header p {
+            font-size: 1.2rem;
+            color: var(--white);
+            margin-bottom: 1rem;
+        }
+        .tagline {
+            background: var(--gold);
+            color: var(--navy-blue);
+            padding: 10px 28px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-radius: 30px;
+            display: inline-block;
+            margin-top: 0.5rem;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .section-title h2 {
+            font-size: 2.3rem;
+            color: var(--black); /* Changed from green to black for consistency */
+            display: inline-block;
+            position: relative;
+        }
+        /* Removed golden underline for unified design */
+        .services {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+        .service-card {
+            background: var(--main-white);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            border: 1px solid #e8f5e9;
+            transition: transform 0.3s, box-shadow 0.3s;
+            padding: 28px 22px;
+        }
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+        .service-card h3 {
+            color: var(--black); /* Changed from green to black for consistency */
+            margin-bottom: 10px;
+        }
+        .service-card p {
+            color: #555;
+        }
+        .benefits {
+            background: linear-gradient(120deg, var(--main-yellow) 0%, var(--light-green) 100%);
+            border-radius: 10px;
+            margin: 40px 0;
+            padding: 30px 0;
+        }
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 24px;
+            margin: 0 20px;
+        }
+        .benefit-card {
+            background: var(--main-white);
+            border: 2px solid var(--main-green);
+            border-radius: 8px;
+            padding: 18px;
+            text-align: center;
+            font-weight: 500;
+        }
+        .process {
+            background: #fff;
+            padding: 50px 0;
+            border-radius: 10px;
+            margin-bottom: 40px;
+        }
+        .process-steps {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+        }
+        .step {
+            width: 200px;
+            text-align: center;
+            padding: 20px;
+            background: var(--main-white);
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.07);
+        }
+        .step-number {
+            width: 50px;
+            height: 50px;
+            background: var(--gold);
+            color: var(--black);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin: 0 auto 15px;
+        }
+        .cta-section {
+            background: linear-gradient(rgba(0,31,63,0.93), rgba(0,31,63,0.97)), url('https://images.unsplash.com/photo-1503676382389-4809596d5290?ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80');
+            background-size: cover;
+            background-position: center;
+            color: var(--white);
+            text-align: center;
+            padding: 3.5rem 2rem;
+            border-radius: 10px;
+            margin-bottom: 2.5rem;
+        }
+        .cta-section h2 {
+            font-size: 2.2rem;
+            margin-bottom: 18px;
+        }
+        .cta-section p {
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+        .btn {
+            display: inline-block;
+            background: var(--main-yellow);
+            color: var(--main-black);
+            font-size: 1.1rem;
+            font-weight: bold;
+            text-decoration: none;
+            padding: 14px 38px;
+            border-radius: 50px;
+            transition: all 0.3s;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border: none;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background: var(--main-black);
+            color: var(--main-white);
+            transform: translateY(-3px);
+        }
+        .back-buttons {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 18px;
+            margin: 32px auto 0 auto;
+            width: fit-content;
+        }
+        .back-link {
+            display: inline-block;
+            background: var(--navy-blue) !important;
+            color: var(--white) !important;
+            border-radius: 30px;
+            padding: 14px 36px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-decoration: none;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            transition: transform 0.2s;
+            width: fit-content;
+            margin: 50px auto 30px auto;
+        }
+        .back-link:hover {
+            background: var(--navy-blue) !important;
+            color: var(--white) !important;
+            transform: translateY(-3px) scale(1.04);
+        }
+        .resume-section {
+            background: #fff;
+            padding: 50px 0;
+            border-radius: 10px;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        .upload-container {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .upload-box {
+            border: 2px dashed var(--main-green);
+            border-radius: 10px;
+            padding: 40px 20px;
+            margin: 0 auto 30px;
+            position: relative;
+        }
+        .upload-icon {
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 3rem;
+            color: var(--main-green);
+        }
+        .file-input {
+            display: none;
+        }
+        .file-label {
+            display: inline-block;
+            background: var(--gold);
+            color: var(--black);
+            padding: 12px 24px;
+            border-radius: 20px;
+            font-weight: bold;
+            text-decoration: none;
+            margin-top: 10px;
+            margin-right: 8px;
+            transition: background 0.3s;
+            box-shadow: 0 2px 8px rgba(212,175,55,0.13);
+        }
+        .file-label:hover {
+            background: var(--dark-gold);
+            color: var(--white);
+        }
+        #file-name {
+            color: var(--black);
+            background: var(--gold);
+            font-weight: 500;
+            padding: 6px 18px;
+            border-radius: 20px;
+            margin-left: 0;
+            display: inline-block;
+        }
+        .form-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 1rem;
+        }
+        .form-group textarea {
+            resize: vertical;
+        }
+        .submit-btn {
+            background: var(--gold);
+            color: var(--black);
+            font-weight: bold;
+            padding: 12px 36px;
+            border-radius: 20px;
+            margin-top: 1rem;
+            border: none;
+            box-shadow: 0 4px 8px rgba(212,175,55,0.13);
+            transition: background 0.3s, color 0.3s;
+        }
+        .submit-btn:hover {
+            background: var(--dark-gold);
+            color: var(--white);
+        }
+        footer {
+            background-color: var(--navy-blue);
+            color: var(--white);
+            padding: 40px 20px 0 20px;
+            margin-top: 40px;
+            width: 100vw;
+            left: 50%;
+            right: 50%;
+            margin-left: -50vw;
+            margin-right: -50vw;
+            position: relative;
+            bottom: 0;
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        .footer-box {
+            text-align: left;
+        }
+        .footer-logo {
+            max-width: 180px;
+            margin-bottom: 1rem;
+        }
+        .social-icons {
+            margin-top: 10px;
+        }
+        .social-icons a {
+            display: inline-block;
+            margin-right: 10px;
+        }
+        .social-icons img {
+            width: 24px;
+            height: 24px;
+        }
+        @media (max-width: 768px) {
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1>Executive Search</h1>
+        <p>Identifying and attracting top-tier leadership talent</p>
+        <div class="tagline">C-Level & Senior Leadership Recruitment</div>
+    </header>
+    <div class="container">
+        <div class="section-title">
+            <h2>Leadership Recruitment Excellence</h2>
+        </div>
+        <div class="services" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 24px; margin-top: 30px;">
+          <div class="service-card" style="flex: 1 1 220px; min-width: 220px; max-width: 320px; margin: 0 8px;">
+            <h3>C-Suite Executives</h3>
+            <p>CEOs, CFOs, COOs, and other C-level positions for business transformation.</p>
+          </div>
+          <div class="service-card" style="flex: 1 1 220px; min-width: 220px; max-width: 320px; margin: 0 8px;">
+            <h3>Board Members</h3>
+            <p>Independent directors and advisory board members for strategic guidance.</p>
+          </div>
+          <div class="service-card" style="flex: 1 1 220px; min-width: 220px; max-width: 320px; margin: 0 8px;">
+            <h3>VPs & Directors</h3>
+            <p>Senior functional leaders across all departments and industries.</p>
+          </div>
+        </div>
+        <section class="benefits">
+            <div class="section-title">
+                <h2>Why Choose Our Executive Search?</h2>
+            </div>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <h4>Confidential Search</h4>
+                    <p>Discreet and targeted approach to attract top leadership talent.</p>
+                </div>
+                <div class="benefit-card">
+                    <h4>Industry Expertise</h4>
+                    <p>Specialized recruiters with deep market knowledge in your sector.</p>
+                </div>
+                <div class="benefit-card">
+                    <h4>Global Reach</h4>
+                    <p>Access to a vast network of executive talent worldwide.</p>
+                </div>
+                <div class="benefit-card">
+                    <h4>Thorough Assessment</h4>
+                    <p>Comprehensive evaluation of leadership, vision, and cultural fit.</p>
+                </div>
+            </div>
+        </section>
+        <section class="process">
+            <div class="section-title">
+                <h2>Our Executive Search Process</h2>
+            </div>
+            <div class="process-steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h4>Position Analysis</h4>
+                    <p>We define the leadership role and success criteria with you.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h4>Target Mapping</h4>
+                    <p>Identify and map potential candidates in target markets.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h4>Discreet Approach</h4>
+                    <p>Engage and assess candidates confidentially.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h4>Thorough Assessment</h4>
+                    <p>Evaluate leadership, vision, and cultural fit for your organization.</p>
+                </div>
+            </div>
+        </section>
+        <section class="resume-section">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Upload Your Resume</h2>
+                </div>
+                <div class="upload-container" style="max-width: 500px; margin: 0 auto; background: var(--light-gray); border-radius: 12px; box-shadow: 0 4px 16px rgba(0,0,0,0.08); padding: 2.5rem 1.5rem;">
+                    <p>Join our network of professionals. Upload your resume to be considered for exciting opportunities in this domain.</p>
+                    <div class="upload-box">
+                        <div class="upload-icon">
+                            <i class="fas fa-file-upload"></i>
+                        </div>
+                        <h3>Upload Your Resume</h3>
+                        <p>Supported formats: PDF, DOC, DOCX (Max 5MB)</p>
+                        <input type="file" id="resume-upload" class="file-input" accept=".pdf,.doc,.docx">
+                        <label for="resume-upload" class="file-label">Choose File</label>
+                        <span id="file-name">No file chosen</span>
+                    </div>
+                    <form id="resume-form">
+                        <div class="form-group">
+                            <label for="fullname">Full Name</label>
+                            <input type="text" id="fullname" placeholder="Enter your full name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" placeholder="Enter your email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" placeholder="Enter your phone number" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="experience">Years of Experience</label>
+                            <select id="experience" required>
+                                <option value="">Select experience level</option>
+                                <option value="0-2">0-2 years</option>
+                                <option value="3-5">3-5 years</option>
+                                <option value="6-10">6-10 years</option>
+                                <option value="10+">10+ years</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="position">Desired Position</label>
+                            <input type="text" id="position" placeholder="Enter desired position" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Cover Message (Optional)</label>
+                            <textarea id="message" rows="4" placeholder="Tell us about your skills"></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn" style="background: var(--gold); color: var(--black); display: block; margin: 1.5rem auto 0 auto;">Submit Application</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+        <div class="navigation-buttons" style="display: flex; justify-content: space-between; align-items: center; width: 100%; max-width: 1200px; margin: 32px auto 0 auto; padding: 0 20px;">
+          <a href="../index.html" class="btn" style="background: var(--gold); color: var(--black); font-weight: bold; padding: 14px 38px; border-radius: 30px; font-size: 1.08rem; box-shadow: 0 4px 8px rgba(212,175,55,0.13); text-decoration: none; transition: background 0.3s, color 0.3s; margin: 0;">Back to Recruitment Services</a>
+          <a href="../request-consultation.html" class="btn" style="background: var(--gold); color: var(--black); font-weight: bold; padding: 14px 38px; border-radius: 30px; font-size: 1.08rem; box-shadow: 0 4px 8px rgba(212,175,55,0.13); text-decoration: none; transition: background 0.3s, color 0.3s;">Request a Consultation</a>
+        </div>
+    </div>
+    <footer class="footer-contact">
+      <div class="footer-grid">
+        <div class="footer-box">
+          <img src="../synture logo.jpg" alt="Synture Logo" class="footer-logo" style="width:100px; height:100px; margin-bottom:1rem; display:block; border-radius:50%; object-fit:cover; box-shadow:0 2px 8px rgba(0,0,0,0.10);">
+          <p>Recruitment Solutions by Synture</p>
+        </div>
+        <div class="footer-box">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="../index.html" style="color:#fff;">Home</a></li>
+            <li><a href="../Services Offered/campus-recruitment.html" style="color:#fff;">Campus Recruitment</a></li>
+            <li><a href="../Services Offered/permanent-staffing.html" style="color:#fff;">Permanent Staffing</a></li>
+            <li><a href="../Services Offered/c2h.html" style="color:#fff;">Contract-to-Hire</a></li>
+            <li><a href="../Services Offered/contract-staffing.html" style="color:#fff;">Contract Staffing</a></li>
+            <li><a href="../Services Offered/executive-search.html" style="color:#fff;">Executive Search</a></li>
+            <li><a href="../Services Offered/rpo.html" style="color:#fff;">RPO</a></li>
+          </ul>
+        </div>
+        <div class="footer-box">
+          <h3>Contact</h3>
+          <ul>
+            <li>Email: contact@synture.com</li>
+            <li>Phone: (555) 123-4567</li>
+            <li>Location: Mumbai, India</li>
+          </ul>
+          <div class="social-icons">
+            <a href="#" style="display:inline-block; margin-right:10px;" aria-label="Facebook">
+              <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" style="vertical-align:middle; border-radius:50%; background:#fff; box-shadow:0 2px 8px rgba(0,0,0,0.10); border:1.5px solid #e0e0e0;">
+                <circle cx="16" cy="16" r="16" fill="#1877F3"/>
+                <path d="M21 16.02h-3v8h-3v-8h-2v-2.5h2v-1.6c0-2.1 1.1-3.4 3.5-3.4h2.5v2.5h-1.6c-0.5 0-0.9 0.4-0.9 0.9v1.6h2.5l-0.4 2.5z" fill="#fff"/>
+              </svg>
+            </a>
+            <a href="#" style="display:inline-block; margin-right:10px;" aria-label="LinkedIn">
+              <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" style="vertical-align:middle; border-radius:50%; background:#fff; box-shadow:0 2px 8px rgba(0,0,0,0.10); border:1.5px solid #e0e0e0;">
+                <circle cx="16" cy="16" r="16" fill="#0A66C2"/>
+                <path d="M12.5 22h-2.5v-8h2.5v8zm-1.2-9.1c-0.8 0-1.3-0.6-1.3-1.3 0-0.7 0.5-1.3 1.3-1.3s1.3 0.6 1.3 1.3c0 0.7-0.5 1.3-1.3 1.3zm10.2 9.1h-2.5v-4c0-1-0.4-1.7-1.3-1.7-0.7 0-1.1 0.5-1.3 1-0.1 0.2-0.1 0.5-0.1 0.8v3.9h-2.5s0-6.3 0-8h2.5v1.1c0.3-0.5 1-1.3 2.3-1.3 1.7 0 3 1.1 3 3.5v4.7z" fill="#fff"/>
+              </svg>
+            </a>
+            <a href="#" style="display:inline-block; margin-right:0;" aria-label="Twitter">
+              <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" style="vertical-align:middle; border-radius:50%; background:#fff; box-shadow:0 2px 8px rgba(0,0,0,0.10); border:1.5px solid #e0e0e0;">
+                <circle cx="16" cy="16" r="16" fill="#1DA1F2"/>
+                <path d="M24 12.3c-0.5 0.2-1 0.4-1.5 0.4 0.5-0.3 0.9-0.8 1.1-1.3-0.5 0.3-1.1 0.6-1.7 0.7-0.5-0.5-1.2-0.8-2-0.8-1.5 0-2.7 1.2-2.7 2.7 0 0.2 0 0.4 0.1 0.6-2.2-0.1-4.1-1.2-5.4-2.8-0.2 0.4-0.3 0.8-0.3 1.2 0 0.9 0.5 1.7 1.2 2.2-0.4 0-0.7-0.1-1-0.3v0c0 1.2 0.8 2.1 1.8 2.3-0.2 0.1-0.4 0.1-0.7 0.1-0.1 0-0.3 0-0.4-0.1 0.3 1 1.2 1.7 2.3 1.7-0.8 0.6-1.8 1-2.8 1-0.2 0-0.4 0-0.6 0 1 0.7 2.2 1.1 3.5 1.1 4.2 0 6.5-3.5 6.5-6.5 0-0.1 0-0.2 0-0.3 0.4-0.3 0.8-0.7 1.1-1.2z" fill="#fff"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div style="text-align:center; margin-top:2rem; font-size:0.95rem; color:#bbb;">&copy; 2025 Synture. All rights reserved.</div>
+    </footer>
+    <script>
+        // File upload functionality
+        document.getElementById('resume-upload').addEventListener('change', function(e) {
+            const fileName = e.target.files[0] ? e.target.files[0].name : 'No file chosen';
+            document.getElementById('file-name').textContent = fileName;
+        });
+        // Form submission handling
+        document.getElementById('resume-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const fileInput = document.getElementById('resume-upload');
+            if (!fileInput.files[0]) {
+                alert('Please upload your resume');
+                return;
+            }
+            alert('Application submitted successfully! We will review your resume and contact you soon.');
+            this.reset();
+            document.getElementById('file-name').textContent = 'No file chosen';
+        });
+    </script>
+</body>
+</html>
