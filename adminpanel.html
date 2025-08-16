@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Admin Login</title>
+  <style>
+    /* Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    /* Body Background */
+    body {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #A8C4EC 50%, #89ABDC 50%);
+    }
+
+    /* Login Container */
+    .login-container {
+      background-color: #213B64;
+      padding: 40px 30px;
+      border-radius: 10px;
+      box-shadow: 0 10px 20px rgba(26, 46, 84, 0.5);
+      width: 320px;
+      height: 400px;
+    }
+
+    /* Title */
+    .login-container h2 {
+      text-align: center;
+      color: white;
+      margin-bottom: 30px;
+      font-size: 22px;
+      letter-spacing: 1px;
+    }
+
+    /* Input Fields */
+    .input-field {
+      background-color: #2F4D7A;
+      border: none;
+      border-radius: 5px;
+      padding: 12px 15px;
+      margin-bottom: 20px;
+      width: 100%;
+      color: #ffffff;
+      font-size: 14px;
+    }
+
+    .input-field::placeholder {
+      color: #C3CCE1;
+    }
+
+    /* Login Button */
+    .login-button {
+      width: 100%;
+      background-color: #5B85CD;
+      border: none;
+      padding: 12px;
+      border-radius: 6px;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .login-button:hover {
+      background-color: #4a74b8;
+    }
+
+    /* Lost Password */
+    .forgot-password {
+      display: block;
+      text-align: right;
+      font-size: 12px;
+      color: #C3CCE1;
+      margin-top: -15px;
+      margin-bottom: 20px;
+      text-decoration: none;
+    }
+
+    .forgot-password:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="login-container">
+    <h2>ADMIN LOGIN</h2>
+    <input type="text" class="input-field" placeholder="Username" />
+    <input type="password" class="input-field" placeholder="Password" />
+    <a href="#" class="forgot-password">Lost Password?</a>
+    <button class="login-button">Login</button>
+  </div>
+</body>
+</html>
